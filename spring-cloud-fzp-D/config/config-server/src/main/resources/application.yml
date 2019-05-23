@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        #native 把配置文件放在本地 git 从远程git读取
+#        native:
+#          search-locations: classpath:/shared
+        git:
+          uri: https://github.com/YinJune/springcloud-learning
+          search-paths: spring-cloud-fzp-D
+          username: 247385709@qq.com
+          password: yjj123456?
+          #分支名
+      label: config
+#  profiles:
+#    active: native
+server:
+  port: 8769

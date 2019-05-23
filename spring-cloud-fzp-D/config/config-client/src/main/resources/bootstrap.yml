@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: config-client
+  #这个配置是让client读取config-server shared下的配置文件作为该工程的配置文件
+  cloud:
+    config:
+      uri: http://localhost:8769
+      fail-fast: true
+  profiles:
+    active: dev
