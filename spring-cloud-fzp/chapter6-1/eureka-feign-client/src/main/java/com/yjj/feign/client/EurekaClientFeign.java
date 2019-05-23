@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "eureka-client",configuration = FeignConfig.class,
     fallback = HiHystrix.class)
 public interface EurekaClientFeign {
-    @GetMapping("hi")
+    @GetMapping("/client/hi")
     String sayHiFromClientEureka(@RequestParam("name")String name);
 }

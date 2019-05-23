@@ -3,6 +3,7 @@ package com.yjj.feign.web;
 import com.yjj.feign.service.HiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version: 1.0
  */
 @RestController
+@RequestMapping("/feign")
 public class HiController {
     @Autowired
     private HiService hiService;
 
-    @GetMapping("hi")
+    @GetMapping("/hi")
     public String hi(@RequestParam("name")String name){
         return hiService.sayHi(name);
     }
