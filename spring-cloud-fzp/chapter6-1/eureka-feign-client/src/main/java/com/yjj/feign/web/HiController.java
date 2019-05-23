@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version: 1.0
  */
 @RestController
-@RequestMapping("/feign")
+@RequestMapping("/api")
 public class HiController {
     @Autowired
     private HiService hiService;
 
     @GetMapping("/hi")
-    public String hi(@RequestParam("name")String name){
-        return hiService.sayHi(name);
+    public String hi(@RequestParam(value = "name",required = false)String name){
+        return "Hi I'm from feign! result:"+hiService.sayHi(name);
     }
 }
