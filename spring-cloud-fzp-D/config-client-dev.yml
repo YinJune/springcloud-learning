@@ -10,4 +10,4 @@ spring:
   application:
     name: eureka-client
 
-foo: foo version 1
+foo: foo version 2
