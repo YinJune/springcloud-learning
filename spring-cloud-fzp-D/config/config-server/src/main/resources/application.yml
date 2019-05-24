@@ -8,7 +8,7 @@ spring:
 #        native:
 #          search-locations: classpath:/shared
         git:
-          uri: https://github.com/YinJune/springcloud-learning
+          uri: https://github.com/YinJune/springcloud-learning/
           search-paths: spring-cloud-fzp-D
           username: 247385709@qq.com
           password: yjj123456?
@@ -18,3 +18,8 @@ spring:
 #    active: native
 server:
   port: 8769
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

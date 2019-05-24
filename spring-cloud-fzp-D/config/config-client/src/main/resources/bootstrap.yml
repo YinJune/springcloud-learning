@@ -1,10 +1,30 @@
 spring:
   application:
     name: config-client
-  #这个配置是让client读取config-server shared下的配置文件作为该工程的配置文件
   cloud:
     config:
-      uri: http://localhost:8769
+      #如果config-server作为一个eureka-client客户端的话不需要uri，使用discovery
+#      uri: http://localhost:8769/
       fail-fast: true
+      #当配置在git时需加lable指定分支
+      label: config
+      discovery:
+        enabled: true
+        service-id: config-server
   profiles:
     active: dev
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  security:
+    enabled: false
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
