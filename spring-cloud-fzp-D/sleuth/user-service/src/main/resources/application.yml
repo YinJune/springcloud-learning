@@ -1,0 +1,16 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8762
+#spring.sleuth.sampler.percentage 是监控的百分比，默认的是0.1表示10%,这里给1.0表示全部监控
+spring:
+  application:
+    name: user-service
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
