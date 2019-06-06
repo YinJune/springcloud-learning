@@ -1,0 +1,10 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1 # 消费者每次从队列里获取消息的数量，此属性不设置时为轮询分发，设置为1 公平分发
